@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>考勤数据手动上传</title>
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css"/>
+  </head>
+  <body>
+	<div class="header">
+		<div class="container text-center">
+			<h1>考勤上传页面 <small>(XXX项目)</small></h1>
+		</div>
+		<div class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a href="" class="navbar-brand">
+						<img src="https://dummyimage.com/64x50/fff/000&text=%E9%85%B8" alt="酸"/>
+					</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							当日/本周/本月 <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li> <a href="">当日</a></li>
+							<li> <a href="">本周</a></li>
+							<li> <a href="">本月</a></li>
+						</ul>
+					</li>
+					<li> <a href="" class="text-lg">考勤人数 <small>56</small></a> </li>
+				</ul>
+				<!--<ul class="nav navbar-nav navbar-right">
+					<li><a href="" class="btn btn-sm btn-success">选中不上传</a></li>
+					
+				</ul>-->
+			</div>
+		</div>
+	</div>
+	<div class="showimg" id="showimg">
+			
+	</div>
+		<div class="container">
+			<div class="form-group">
+					<table class="table table-hover table-head">
+						<thead > 
+							<th>选择</th>
+							<th>序号</th>
+							<th>编号</th>
+							<th>考勤照片</th>
+							<th>姓名</th>
+							<th>考勤时间</th>
+						</thead>
+						<tbody>
+							<tr>
+								<th>
+									<input type="checkbox" name="" id="" value="" class="form-control" />
+								</th>
+								<td>1</td>
+								<td>1000</td>
+								<td >
+									<img src="img/a.jpg"/> 
+								</td>
+								<td>王yy</td>
+								<td><time>2018-7-9-16:24</time></td>
+							</tr>
+							<tr>
+								<th>
+									<input type="checkbox" name="" id="" value="" class="form-control" />
+								</th>
+								<td>1</td>
+								<td>1000</td>
+								<td><img src="img/a.jpg"/></td>
+								<td>王yy</td>
+								<td><time>2018-7-9-16:24</time></td>
+							</tr>
+							<tr>
+								<th>
+									<input type="checkbox" name="" id="" value="" class="form-control" />
+								</th>
+								<td>1</td>
+								<td>1000</td>
+								<td><img src="img/a.jpg"/></td>
+								<td>王yy</td>
+								<td><time>2018-7-9-16:24</time></td>
+							</tr>
+							<tr>
+								<th>
+									<input type="checkbox" name="" id="" value="" class="form-control" />
+								</th>
+								<td>1</td>
+								<td>1000</td>
+								<td><img src="img/a.jpg"/></td>
+								<td>王yy</td>
+								<td><time>2018-7-9-16:24</time></td>
+							</tr>
+							<tr>
+								<th>
+									<input type="checkbox" class="form-control" />
+								</th>
+								<td>1</td>
+								<td>1000</td>
+								<td><img src="img/a.jpg"/></td>
+								<td>王yy</td>
+								<td><time>2018-7-9-16:24</time></td>
+							</tr>
+							<tr>
+										<th>
+											<input type="checkbox" id="aaa" class="form-control" />
+										</th>
+										<td>2</td>
+										<td>1000</td>
+										<td><img src="img/a.jpg"/></td>
+										<td>王yy</td>
+										<td><time>2018-7-9-16:24</time></td>
+							</tr>
+							<tr>
+										<th>
+											<input type="checkbox" id="aaa" class="form-control" />
+										</th>
+										<td>2</td>
+										<td>1000</td>
+										<td><img src="img/a.jpg"/></td>
+										<td>王yy</td>
+										<td><time>2018-7-9-16:24</time></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+		</div>
+		<div class="container text-center">
+			<button class="btn btn-success" style="margin-right: 30px;">标记为已上传</button>
+			<button class="btn btn-info">全部上传</button>
+		</div>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    	var oTrs=document.getElementsByTagName('tr');
+    	
+  		var oDiv=document.getElementById('showimg');
+    	var i=0;
+    	
+    	for(;i<oTrs.length;i++){
+    		
+    			var oImg=oTrs[i].getElementsByTagName('img');
+						if(oImg.length != 0){
+							oImg[0].onmousemove=function(){
+						 
+						  oDiv.style.display='block';
+						  oDiv.innerHTML='<img src="'+this.src+'">';
+						 };
+						  oImg[0].onmouseout=function(){
+						  	oDiv.style.display='none';
+						  };
+				
+						}
+						
+    		oTrs[i].onclick=function(){
+					var InputCheckbox=this.getElementsByTagName('input');
+					if(InputCheckbox[0].checked != true){
+						InputCheckbox[0].checked = true;
+					}else{
+						InputCheckbox[0].checked = false;
+					}
+					
+    		};
+    	}
+    </script>
+  </body>
+</html>

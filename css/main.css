@@ -1,0 +1,33 @@
+@charset "utf-8";
+.navbar-header{
+	margin-right: 20px;
+}
+.navbar-brand{
+	padding: 0;
+	margin-right: 50px;
+}
+.form-group{
+	height: 400px;
+	overflow-y: auto;
+}
+.table-head{
+	position: relative;
+}
+.table tbody tr td img{
+	max-width: 10%;
+} 
+.showimg{
+	display: none;
+	width: 25%;
+	position: absolute;
+	top: 50%;
+	bottom: 0;
+	left: 50%;
+	margin-left: -12%;
+	margin-top: -250px;
+	height: 400px;
+	z-index: 999;
+	background-color: rgba(0,0,0,.2);
+	text-align: center;
+	line-height: 400px;
+}
